@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os, sys
 from unipath import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,7 @@ PROJECT_APPS    = Path(__file__).ancestor(2)
 SOUNDS_DIR      = os.path.join(BASE_DIR, 'apps/telegrambot/sounds',)
 
 sys.path.insert(0, Path(PROJECT_APPS, 'apps'))
+load_dotenv(os.path.join(PROJECT_APPS,'.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -132,3 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+TOKEN = os.getenv('TOKEN')

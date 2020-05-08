@@ -17,7 +17,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import PlayList
 
 
-bot = telebot.TeleBot("1132917333:AAGBF1elQJq96ERjNNKlt0f7__QQP6hyQH0")
+TOKEN   = settings.TOKEN
+bot     = telebot.TeleBot(TOKEN)
 
 User = get_user_model()
 
