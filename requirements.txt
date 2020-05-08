@@ -7,3 +7,4 @@ pytz==2020.1
 requests==2.7.0
 six==1.14.0
 Unipath==1.1
+whitenoise
